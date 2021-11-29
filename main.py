@@ -1,14 +1,29 @@
+# Code from:    https://learn.adafruit.com/adafruit-ultimate-gps-on-the-raspberry-pi?view=all
+
+
 class Fly:
-    __gps_positioning = []
+    gps_position_of_target = [0,0,0]
+    # This gives us the longitude, latitude, and elevation of the target
+    # (we might need elevation since our location might be either above or below sea level)
 
     def open_wings(self):
         pass
         # Turns on the servos
 
-    def move_over_target(self,new_gps_pos):
+    def move_over_target(self):
         while True:
-            __gps_positioning = new_gps_pos
-            # Calculate stuff
+            gps_position_of_glider = [gps.longitude, gps.latitude, gps.altitude]
+            # Need to find out which exact gps sensor we are using because different sensors will have different
+            # modules and ways of installing it
+
+            height = 0
+            # We need to find a equation for the barometer in order to find our altitude
+
+            angle_of_attack = 0
+            # Use gyroscope in order to find our angle of attack
+
+            # Calculate the new angle of attack
+
             # Adjust the glider to the new pos
 
     def drop(self):
